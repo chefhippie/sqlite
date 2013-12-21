@@ -17,7 +17,20 @@
 # limitations under the License.
 #
 
-default["sqlite"]["packages"] = %w(
-  sqlite3
-  sqlite3-devel  
-)
+case node["platform_family"]
+when "debian"
+  default["sqlite"]["packages"] = %w(
+    sqlite3
+    libsqlite3-dev
+  )
+when "ubuntu"
+  default["sqlite"]["packages"] = %w(
+    sqlite3
+    libsqlite3-dev
+  )
+when "suse"
+  default["sqlite"]["packages"] = %w(
+    sqlite3
+    sqlite3-devel  
+  )
+end
