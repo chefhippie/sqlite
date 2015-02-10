@@ -22,12 +22,8 @@ default["sqlite"]["packages"] = value_for_platform_family(
     sqlite3
     libsqlite3-dev
   ),
-  "ubuntu" => %w(
-    sqlite3
-    libsqlite3-dev
-  ),
   "suse" => %w(
     sqlite3
-    sqlite3-devel  
+    sqlite3-devel
   )
 )
